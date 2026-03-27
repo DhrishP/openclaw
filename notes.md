@@ -1,0 +1,1 @@
+- Do not install acpx globally via npm and then download the package. only download package

@@ -1,0 +1,168 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.3.24",
+    "lastTouchedAt": "2026-03-27T06:04:35.449Z"
+  },
+  "env": {
+    "AGENTMAIL_API_KEY": ""
+  },
+  "wizard": {
+    "lastRunAt": "2026-03-27T03:03:43.156Z",
+    "lastRunVersion": "2026.3.24",
+    "lastRunCommand": "onboard",
+    "lastRunMode": "local"
+  },
+  "logging": {
+    "level": "debug",
+    "consoleLevel": "debug"
+  },
+  "auth": {
+    "profiles": {
+      "openai:default": {
+        "provider": "openai",
+        "mode": "api_key"
+      }
+    }
+  },
+  "acp": {
+    "backend": "acpx",
+    "defaultAgent": "codex",
+    "allowedAgents": [
+      "pi",
+      "claude",
+      "codex",
+      "opencode",
+      "gemini",
+      "claude-code",
+      "codeclaw"
+    ]
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "openai/gpt-4.1-mini"
+      },
+      "models": {
+        "openai/gpt-5.4": {
+          "alias": "GPT"
+        },
+        "openai/gpt-4.1-mini": {}
+      },
+      "workspace": "/home/whycurious/.openclaw/workspace",
+      "compaction": {
+        "mode": "safeguard"
+      }
+    }
+  },
+  "tools": {
+    "profile": "coding"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "hooks": {
+    "internal": {
+      "enabled": true,
+      "entries": {
+        "session-memory": {
+          "enabled": true
+        },
+        "command-logger": {
+          "enabled": true
+        }
+      }
+    }
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "pairing",
+      "botToken": "8764399174:",
+      "groups": {
+        "*": {
+          "requireMention": false
+        }
+      },
+      "groupAllowFrom": [
+        "6644424071"
+      ],
+      "groupPolicy": "allowlist",
+      "streaming": "partial"
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "controlUi": {
+      "allowedOrigins": [
+        "https://fedora.tail821372.ts.net"
+      ]
+    },
+    "auth": {
+      "mode": "token",
+      "token": ""
+    },
+    "tailscale": {
+      "mode": "serve",
+      "resetOnExit": false
+    },
+    "nodes": {
+      "denyCommands": [
+        "camera.snap",
+        "camera.clip",
+        "screen.record",
+        "contacts.add",
+        "calendar.add",
+        "reminders.add",
+        "sms.send"
+      ]
+    }
+  },
+  "skills": {
+    "entries": {
+      "agentmail": {
+        "enabled": true,
+        "env": {
+          "AGENTMAIL_API_KEY": ""
+        }
+      }
+    }
+  },
+  "plugins": {
+    "allow": [
+      "telegram",
+      "acpx"
+    ],
+    "load": {
+      "paths": [
+        "/home/whycurious/.npm-global/lib/node_modules/openclaw/dist/extensions/acpx"
+      ]
+    },
+    "entries": {
+      "acpx": {
+        "enabled": true,
+        "config": {
+          "permissionMode": "approve-all",
+          "nonInteractivePermissions": "fail",
+          "queueOwnerTtlSeconds": 5
+        }
+      }
+    },
+    "installs": {
+      "acpx": {
+        "source": "path",
+        "spec": "acpx",
+        "sourcePath": "/home/whycurious/.npm-global/lib/node_modules/openclaw/dist/extensions/acpx",
+        "installPath": "/home/whycurious/.npm-global/lib/node_modules/openclaw/dist/extensions/acpx",
+        "installedAt": "2026-03-27T04:37:42.324Z"
+      }
+    }
+  }
+}
